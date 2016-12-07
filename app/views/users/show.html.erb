@@ -1,0 +1,12 @@
+あなたにオススメの楽曲
+<ul>
+<% @recommends.each_with_index do |recommend,i| %>
+  <li class="clearfix"> 
+    <img src="<%= recommend.music.image_url %>" alt="Not found."> 
+    <label> 　<%= i+1 %>位：<%= recommend.music.title %> </label>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to '評価値入力へ', '/music/new' %>
+<%= link_to 'トップページへ', '/music' %>

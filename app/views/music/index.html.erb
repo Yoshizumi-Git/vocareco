@@ -1,0 +1,22 @@
+<h1> おすすめボカロ曲診断 </h1>
+<h4> このサイトについて </h4>
+<p> このサイトは自分の好みに合ったボカロ曲を見つけるためのサイトです。 </p>
+<h4> 使い方 </h4>
+<ul>
+<li>評価値入力からボカロ曲に対する評価値を入力します。</li>
+<li>その評価値を元に、オススメの曲が計算されるので、診断結果の閲覧から確認します。</li>
+<li>多くの評価値を入力するほど、精度の良い診断が出来るので、なるべく多く回答してください。</li>
+</ul>
+<% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to '評価値入力へ', 'music/new' %>
+          <a href="/users/<%= current_user.id %>">診断結果の閲覧</a>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </div>
+<% end %>
+

@@ -1,0 +1,45 @@
+<div class="contents row">
+  <%= form_tag('/music', method: :post) do %>
+  <h3>
+    楽曲の評価値を入力
+  </h3>
+  <p>知らない曲は空白にしてね！</p>
+  <br>
+  <% Music.all.sample(10).each do |music| %>
+  <div class="clearfix"> 
+    <img src="<%= music.image_url %>" alt="Not found."> 
+    <label> <%= music.title %> </label>
+    <table>
+      <tr>
+        <td>　大好き</td>
+        <td>　好き　</td>
+        <td>　普通　</td>
+        <td>　嫌い　</td>
+        <td>　大嫌い</td>
+      </tr>
+      <tr>
+        <td align="center"> <input type="radio" name="music_id[<%= music.id %>]" value="2"> </td>
+        <td align="center"> <input type="radio" name="music_id[<%= music.id %>]" value="1"> </td>
+        <td align="center"> <input type="radio" name="music_id[<%= music.id %>]" value="0"> </td>
+        <td align="center"> <input type="radio" name="music_id[<%= music.id %>]" value="-1"> </td>
+        <td align="center"> <input type="radio" name="music_id[<%= music.id %>]" value="-2"> </td>
+      </tr>
+    </table>
+  </div>
+  
+  <br>
+  <% end %>
+  <input class="input_music" type="submit" value="送信"> 
+  <% end %>
+  <br>
+  <%= link_to 'トップページへ', '/music' %>
+  
+  <script>
+    var btn = document.getElementsByClassName("input_music")[0]
+    function sendSuccess() {
+      alert('送信しました');
+    }
+    btn.addEventListener("click", sendSuccess);
+  </script>
+
+</div>
