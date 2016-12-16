@@ -1,8 +1,6 @@
 require 'set'
 require "narray"
 
-vnjaklbjfalbvfjkal
-
 class Recommend < ActiveRecord::Base
   belongs_to :user
   belongs_to :music

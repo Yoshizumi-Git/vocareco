@@ -10,7 +10,7 @@
 <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <%= link_to '評価値入力へ', 'music/new' %>
+          <%= link_to '評価値入力へ', '/music/new' %>
           <a href="/users/<%= current_user.id %>">診断結果の閲覧</a>
         </div>
       <% else %>

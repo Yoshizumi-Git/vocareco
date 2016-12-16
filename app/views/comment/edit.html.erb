@@ -1,0 +1,7 @@
+<%= form_tag('/comment', method: :patch) do %>
+  <label> コメントの編集 </label> <br>
+  <input type="text" name="review" value="<%= @commend.review %>" >
+  <input type="hidden" name="comment_id" value="<%= @commend.id %>" >
+  <br>
+  <input type="submit" value="修正"> 
+<% end %>

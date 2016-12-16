@@ -1,0 +1,33 @@
+<h2><%= Music.find(params[:id]).title %>に対するコメント</h2>
+
+<iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" width="798" height="500" src="http://embed.nicovideo.jp/watch/<%= Music.find(params[:id]).movie_url.split("/")[-1] %>?oldScript=1"></iframe>
+
+<% if @comments.present? %>
+  <ul>
+  <% @comments.each_with_index do |comment,i| %>
+    <li> 
+      <div class="clearfix">
+      <a href="/comment/<%=comment.id%>/edit" > <%= comment.review %> </a>
+      <%= button_to '削除', "/comment/#{comment.id}", :method => :delete %>
+      </div>
+    </li>
+    <br>
+  <% end %>
+  </ul>
+<% else %>
+  <p> まだコメントはありません。 </p>
+<% end %>
+
+<%= form_tag('/comment', method: :post) do %>
+  <label> コメントの追加 </label> <br>
+  <input type="text" name="review" value="" > 
+  <input type="hidden" name="user_id" value="<%= current_user.id %>" >
+  <input type="hidden" name="music_id" value="<%= params[:id] %>" >
+  <br>
+  <input class="input_music" type="submit" value="送信"> 
+<% end %>
+
+<br>
+<%= link_to 'トップページへ', '/music' %>
+
+

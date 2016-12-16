@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
          :authentication_keys => [:username]
 
   has_many :ratings
+  has_many :comments
   has_many :recommends
 
   #usernameを必須とする

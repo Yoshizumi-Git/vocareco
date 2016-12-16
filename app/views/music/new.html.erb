@@ -7,8 +7,9 @@
   <br>
   <% Music.all.sample(10).each do |music| %>
   <div class="clearfix"> 
-    <img src="<%= music.image_url %>" alt="Not found."> 
-    <label> <%= music.title %> </label>
+    <!-- <iframe class="visual" allowfullscreen="allowfullscreen" frameborder="0" width="133" height="100" src="http://embed.nicovideo.jp/watch/<%= music.movie_url.split("/")[-1] %>?oldScript=1"></iframe> -->
+    <img class="visual" src="<%= music.image_url %>" alt="Not found."> 
+    <a href="<%= music.id %>"> <%= music.title %> </a>
     <table>
       <tr>
         <td>　大好き</td>

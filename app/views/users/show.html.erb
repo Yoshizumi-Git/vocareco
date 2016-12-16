@@ -2,9 +2,11 @@
 <ul>
 <% @recommends.each_with_index do |recommend,i| %>
   <li class="clearfix"> 
-    <img src="<%= recommend.music.image_url %>" alt="Not found."> 
-    <label> 　<%= i+1 %>位：<%= recommend.music.title %> </label>
+    <h2> <%= i+1 %>位：<%= recommend.music.title %></h2>
+    <!-- <img class="visual" src="<%= recommend.music.image_url %>" alt="Not found.">  -->
+    <iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" width="490" height="307" src="http://embed.nicovideo.jp/watch/<%= recommend.music.movie_url.split("/")[-1] %>?oldScript=1"></iframe>
   </li>
+  <br>
 <% end %>
 </ul>
 

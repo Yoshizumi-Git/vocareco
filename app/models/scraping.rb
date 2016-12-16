@@ -32,7 +32,9 @@ class Scraping
     csv_data.each do |data|
       title = data[:title]
       image = data[:image]
+      movie = data[:movie]
       music = Music.where(title:title,image_url:image).first_or_initialize
+      music[:movie_url] = movie
       music.save
     end
   end
