@@ -47,8 +47,11 @@ group :development do
 end
 
 group :production, :staging do
+  gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'pg'
 
 gem 'pry-rails'
 gem 'compass-rails','~> 2.0'
