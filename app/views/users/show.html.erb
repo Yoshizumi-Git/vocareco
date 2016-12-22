@@ -1,14 +1,15 @@
 あなたにオススメの楽曲
-<ul>
 <% @recommends.each_with_index do |recommend,i| %>
-  <li class="clearfix"> 
-    <h2> <%= i+1 %>位：<%= recommend.music.title %></h2>
+  <div class="clearfix"> 
     <!-- <img class="visual" src="<%= recommend.music.image_url %>" alt="Not found.">  -->
-    <iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" width="490" height="307" src="http://embed.nicovideo.jp/watch/<%= recommend.music.movie_url.split("/")[-1] %>?oldScript=1"></iframe>
-  </li>
+    <div class="iframe-content">
+      <iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.nicovideo.jp/watch/<%= recommend.music.movie_url.split("/")[-1] %>?oldScript=1"></iframe>
+    </div>
+    <!-- <p class="ranking"> <%= i+1 %>位：<%= recommend.music.title %></p> -->
+    <a class="music_title" href="/music/<%= recommend.music.id %>"> <%= i+1 %>位： <%= recommend.music.title %> </a>
+  </div>
   <br>
 <% end %>
-</ul>
 
 <%= link_to '評価値入力へ', '/music/new' %>
 <%= link_to 'トップページへ', '/music' %>

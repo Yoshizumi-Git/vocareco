@@ -6,17 +6,18 @@
   <p>知らない曲は空白にしてね！</p>
   <br>
   <% Music.all.sample(10).each do |music| %>
+  
   <div class="clearfix"> 
     <!-- <iframe class="visual" allowfullscreen="allowfullscreen" frameborder="0" width="133" height="100" src="http://embed.nicovideo.jp/watch/<%= music.movie_url.split("/")[-1] %>?oldScript=1"></iframe> -->
-    <img class="visual" src="<%= music.image_url %>" alt="Not found."> 
-    <a href="<%= music.id %>"> <%= music.title %> </a>
+    <img class="music_img" src="<%= music.image_url %>" alt="Not found."> 
+    <a class="music_title" href="<%= music.id %>"> <%= music.title %> </a>
     <table>
       <tr>
-        <td>　大好き</td>
-        <td>　好き　</td>
-        <td>　普通　</td>
-        <td>　嫌い　</td>
-        <td>　大嫌い</td>
+        <td> <p>大好き</p> </td>
+        <td> <p>好き</p> </td>
+        <td> <p>普通</p> </td>
+        <td> <p>嫌い</p> </td>
+        <td> <p>大嫌い</p> </td>
       </tr>
       <tr>
         <td align="center"> <input type="radio" name="music_id[<%= music.id %>]" value="2"> </td>

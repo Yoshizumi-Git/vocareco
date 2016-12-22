@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+.submit_button{
+  width: 20%;
+  height: 20%;
+  font-size:80%;
+  border: 1px solid #000000;
+}
+
+.input_text{
+  width: 50%;
+  height: 20%;
+  font-size:80%;
+  border: 1px solid #000000;
+}
+
+.text_scale2{
+  font-size:200%;
+}
+
+
+.text_scale3{
+  font-size:300%;
+}
