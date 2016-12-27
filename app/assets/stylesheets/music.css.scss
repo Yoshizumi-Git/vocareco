@@ -14,6 +14,13 @@
     height: 40%;
 }
 
+.center{
+  width: 90%;
+  margin: auto;
+  border: 1px solid #aaa;
+  text-align: center;
+}
+
 .title{
   text-align: center;
   margin: 0 auto;
@@ -27,6 +34,11 @@ input[type="radio"]{
 
 .text_scale2{
   font-size:200%;
+}
+
+.mergin90{
+  width: 90%;
+  margin: auto;
 }
 
 .music_title{

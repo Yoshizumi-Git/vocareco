@@ -1,26 +1,26 @@
 <div class="text_scale2">
-<h2>Log in</h2>
+<h2 class="text_scale2">ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :username %><br />
+    <%= f.label :ユーザー名 %><br />
     <%= f.text_field :username, autofocus: true, class: "input_text" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :パスワード %><br />
     <%= f.password_field :password, autocomplete: "off", class: "input_text" %>
   </div>
-
+<!-- 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end -%>
-
+ -->
   <div class="actions">
-    <%= f.submit  "Log in" , class: "submit_button" %>
+    <%= f.submit  "ログイン" , class: "submit_button" %>
   </div>
 <% end %>
 

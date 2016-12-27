@@ -1,9 +1,10 @@
 <div class="text_scale2">
 
-<h2><%= Music.find(params[:id]).title %></h2>
-
 <div class="iframe-content">
 <iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" width="798" height="500" src="http://embed.nicovideo.jp/watch/<%= Music.find(params[:id]).movie_url.split("/")[-1] %>?oldScript=1"></iframe></div>
+
+<p class="center"> <%= Music.find(params[:id]).title %> </p>
+
 
 <% if @comments.present? %>
   <ul>
@@ -21,9 +22,9 @@
   <p> まだコメントはありません。 </p>
 <% end %>
 
-<%= form_tag('/comment', method: :post) do %>
+<%= form_tag('/comment', remote: true, method: :post) do %>
   <label> コメントの追加 </label> <br>
-  <input class="input_text" type="text" name="review" value="" > 
+  <input id="comment" class="input_text" type="text" name="review" value="" > 
   <input type="hidden" name="user_id" value="<%= current_user.id %>" >
   <input type="hidden" name="music_id" value="<%= params[:id] %>" >
   <br>

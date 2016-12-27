@@ -24,7 +24,8 @@ class CommentController < ApplicationController
 
   def create
     Comment.create(comment_params)
-    redirect_to "/music/#{comment_params[:music_id]}"
+    @comments = Comment.where("music_id = #{params[:music_id]}")
+    #redirect_to "/music/#{comment_params[:music_id]}"
   end
 
   private
