@@ -12,8 +12,8 @@
     <div class="header_bar">
       <h1 class="grid"><a href="/">VocaReco</a></h1>
       <% if user_signed_in? %>
-        <div class="grid">
-          <%= link_to '評価値入力へ', '/music/new', :class => "post" %>
+        <div class="grid"><!-- 
+          <%= link_to '評価値入力へ', '/music/new', :class => "post" %> -->
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => "post" %>
         </div>
 

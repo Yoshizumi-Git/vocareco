@@ -1,18 +1,19 @@
 class MusicController < ApplicationController
   def index
+    @music = Music.offset( rand(Music.count) ).first
   end
 
   def new
   end
 
   def create
+    like={"大好き" => 2,"好き" => 1,"知らない" => 0,"嫌い" => -1,"大嫌い" => -2}
     if params[:music_id].present?
-      params[:music_id].each do |music_rate|
-        rating = Rating.where(music_id:music_rate[0],user_id:current_user.id).first_or_initialize
-        rating[:rate] = music_rate[1]
-        rating.save
-      end
+      rating = Rating.where(music_id:params[:music_id],user_id:current_user.id).first_or_initialize
+      rating[:rate] = like[params[:rating]]
+      rating.save
     end
-    redirect_to action: :index
+    @music = Music.offset( rand(Music.count) ).first
+    # redirect_to action: :index
   end
 end

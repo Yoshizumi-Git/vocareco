@@ -9,9 +9,14 @@
 }
 
 .music_img {
-    float: left;
-    width: 40%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
+}
+
+.music_frame{
+  padding: 30px;
+  background-color: lightyellow;
+
 }
 
 .center{
@@ -31,6 +36,18 @@ input[type="radio"]{
    margin-right: 0.5em;
 }
 
+input[type="submit"]{
+    padding:auto;
+    border: 2px solid #57C3E9;
+    background-color: white;
+    width:130px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 30px;
+    display: inline-block;
+}
+
 .text_scale2{
   font-size:200%;
 }
@@ -41,9 +58,7 @@ input[type="radio"]{
 }
 
 .music_title{
-  width: 60%;
-  height: 60%;
-  font-size:15px;
+  font-size:20px;
 }
 
 .input_music  {
@@ -58,12 +73,12 @@ input[type="radio"]{
 
 table{
   table-layout: fixed;
-  width: 60%;
+  width: 100%;
 }
 
 td{
   /*border: 1px solid #FF0000;*/
   text-align: center;
   margin: 0 auto;
-  font-size:180%;
+  font-size:40px;
 }

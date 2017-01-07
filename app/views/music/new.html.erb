@@ -7,7 +7,7 @@
   <br>
   <% Music.all.sample(10).each do |music| %>
   
-  <div class="clearfix"> 
+  <div class="music_frame clearfix"> 
     <!-- <iframe class="visual" allowfullscreen="allowfullscreen" frameborder="0" width="133" height="100" src="http://embed.nicovideo.jp/watch/<%= music.movie_url.split("/")[-1] %>?oldScript=1"></iframe> -->
     <img class="music_img" src="<%= music.image_url %>" alt="Not found."> 
     <a class="music_title" href="<%= music.id %>"> <%= music.title %> </a>
