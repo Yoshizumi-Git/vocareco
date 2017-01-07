@@ -17,7 +17,7 @@
     <a id="music_title" class="music_title" href="/music/<%= @music.id %>"> <%= @music.title %> </a>
 
     <%= form_tag('/music', remote: true, method: :post) do %>
-    <input type="hidden" name="music_id" value="<%= @music.id %>" />
+    <input id="music_id" type="hidden" name="music_id" value="<%= @music.id %>" />
     <table>
       <tr>
         <td align="center"> <input type="submit" name="rating" value="大好き"> </td>
