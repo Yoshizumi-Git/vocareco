@@ -6,21 +6,20 @@
 <p class="center"> <%= Music.find(params[:id]).title %> </p>
 
 
-<% if @comments.present? %>
-  <ul>
-  <% @comments.each_with_index do |comment,i| %>
-    <li> 
-      <div class="clearfix">
-      <a href="/comment/<%=comment.id%>/edit" > <%= comment.review %> </a>
-      <%= button_to '削除', "/comment/#{comment.id}", :method => :delete ,:class => "send_button" %>
-      </div>
-    </li>
-    <br>
+<ul>
+  <% if @comments.present? %>
+    <% @comments.each_with_index do |comment,i| %>
+      <li> 
+        <div class="clearfix">
+        <a href="/comment/<%=comment.id%>/edit" > <%= comment.review %> </a>
+        <%= button_to '削除', "/comment/#{comment.id}", :method => :delete ,:class => "send_button" %>
+        </div>
+      </li>
+      <br>
+    <% end %>
   <% end %>
-  </ul>
-<% else %>
-  <p> まだコメントはありません。 </p>
-<% end %>
+</ul>
+
 
 <%= form_tag('/comment', remote: true, method: :post) do %>
   <label> コメントの追加 </label> <br>
@@ -29,7 +28,7 @@
   <input type="hidden" name="music_id" value="<%= params[:id] %>" >
   <br>
   <input class="send_button" type="submit" value="送信"> 
-<% end %>
+<% end %> 
 
 <br>
 <%= link_to 'トップページへ', '/music' %>

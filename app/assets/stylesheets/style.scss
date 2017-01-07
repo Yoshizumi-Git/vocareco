@@ -1,11 +1,76 @@
-@import "compass";
+$miku: #57C3E9;
+$black: #292929;
+$dark: #666;
+$darkGray: #999999;
+$gray: #D8D8D8;
+$lightGray: #f5f5f3;
+$white: white;
 
-/*
- * "ほのか明朝" licensed under the IPA Font License Agreement v1.0
- * http://fontfree.me/966（配布元のURL）
- * http://ipafont.ipa.go.jp/（IPAフォントのURL）
- * http://ipafont.ipa.go.jp/ipa_font_license_v1.html（IPAフォントライセンスv1.0のURL）
- */
+
+a {
+  text-decoration: none;
+  color:blue;
+  @extend .transition;
+  &:hover {
+    color: $darkGray;
+  }
+}
+
+.btn {
+    padding:8px 20px;
+    border: 2px solid $miku;
+    color: $lightGray;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+header.header {
+  border-bottom: 1px solid gray;
+  background-color: aliceblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1%;
+  z-index: 5;
+}
+
+div.header_bar{
+  position: relative;
+  h1.grid {
+    font-size: 64px;
+    float: left;
+    a {
+      color: mediumspringgreen;
+    }
+  }
+  div.grid {
+    font-size: 42px;
+    float: right;
+    margin-top: 51px;
+    margin-right: 1px;
+    a.post {
+      @extend .btn;
+      color: $miku;
+    }
+  }
+}  
+
+.main_content{
+  margin:250px 0 0 0;
+}
+
+html{
+  margin:1%;
+  background-color: mintcream;
+}
+
+
+
+/*@import "compass";
+
 @font-face {
     font-family: 'ほのか明朝';
     src: url('font_1_honokamin.ttf') format('truetype');
@@ -381,4 +446,4 @@ footer {
   p {
     text-align: center;
   }
-}
+}*/
