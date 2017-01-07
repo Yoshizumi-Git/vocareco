@@ -14,7 +14,7 @@
 
   <div class="music_frame clearfix"> 
     <img id="music_img" class="music_img" src="<%= @music.image_url %>" alt="Not found."> 
-    <a id="music_title" class="music_title" href="<%= @music.id %>"> <%= @music.title %> </a>
+    <a id="music_title" class="music_title" href="/music/<%= @music.id %>"> <%= @music.title %> </a>
 
     <%= form_tag('/music', remote: true, method: :post) do %>
     <input type="hidden" name="music_id" value="<%= @music.id %>" />
