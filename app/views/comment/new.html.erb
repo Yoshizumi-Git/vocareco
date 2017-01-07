@@ -1,7 +1,7 @@
 <div class="text_scale2">
 
 <div class="iframe-content">
-<iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" width="798" height="500" src="https://embed.nicovideo.jp/watch/<%= Music.find(params[:id]).movie_url.split("/")[-1] %>?oldScript=1"></iframe></div>
+<iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" width="798" height="500" src="http://embed.nicovideo.jp/watch/<%= Music.find(params[:id]).movie_url.split("/")[-1] %>?oldScript=1"></iframe></div>
 
 <p class="center"> <%= Music.find(params[:id]).title %> </p>
 

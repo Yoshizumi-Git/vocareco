@@ -3,7 +3,7 @@
 <% music = Music.find(recommend.music_id) %>
   <div class="clearfix"> 
     <div class="iframe-content">
-      <iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" src="https://embed.nicovideo.jp/watch/<%= music.movie_url.split("/")[-1] %>?oldScript=1"></iframe>
+      <iframe class="movie" allowfullscreen="allowfullscreen" frameborder="0" src="http://embed.nicovideo.jp/watch/<%= music.movie_url.split("/")[-1] %>?oldScript=1"></iframe>
     </div>
     <a class="music_title" href="/music/<%= music.id %>"> <%= i+1 %>位： <%= recommend.music.title %> </a>
   </div>
