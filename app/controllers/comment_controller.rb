@@ -1,7 +1,7 @@
 class CommentController < ApplicationController
 
   def new
-    @comments = Comment.where("music_id = #{params[:id]}")
+    @comments = Comment.where("music_id = #{params[:id].to_s}")
   end
 
   def edit
